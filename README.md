@@ -76,24 +76,6 @@ Example data sources:
 2. Open ./powerbi/Risk-Summary.pbix.
 3. If using the included sample CSV, Power BI will load it automatically. If you use your own data, update the data source in Power BI (Home > Transform data > Data source settings).
 
-
-## Folder Structure
-risk-summary-dashboard/
-├─ .github/
-│  └─ ISSUE_TEMPLATE.md
-├─ docs/
-│  ├─ screenshot.png
-│  └─ design-notes.md
-├─ data/
-│  ├─ raw/
-│  │  └─ risks_sample.csv
-│  └─ processed/
-│     └─ risks_clean.csv
-├─ powerbi/
-│  └─ Risk-Summary.pbix
-├─ scripts/
-├─ README.md
-
 ## Suggested Power BI measures (DAX)
 
 IsOpenCount = CALCULATE(COUNT('risks'[RiskID]), 'risks'[IsOpen] = 1)
