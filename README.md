@@ -1,6 +1,6 @@
 # Risk Summary Dashboard
 
-A clean, interactive dashboard to track and analyze project risks and opportunities by owner, severity, likelihood, status and weighted risk score. Built with Power BI (primary), with optional preprocessing scripts in Python and SQL for data preparation.
+A clean, interactive dashboard to track and analyze project risks and opportunities by owner, severity, likelihood, status and weighted risk score.
 
 
 ## Table of contents
