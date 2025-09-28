@@ -92,11 +92,7 @@ risk-summary-dashboard/
 ├─ powerbi/
 │  └─ Risk-Summary.pbix
 ├─ scripts/
-│  └─ preprocess.py
-├─ sql/
-│  └─ create_risks_table.sql
 ├─ README.md
-└─ LICENSE
 
 ## Suggested Power BI measures (DAX)
 
