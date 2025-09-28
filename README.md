@@ -2,9 +2,6 @@
 
 A clean, interactive dashboard to track and analyze project risks and opportunities by owner, severity, likelihood, status and weighted risk score. Built with Power BI (primary), with optional preprocessing scripts in Python and SQL for data preparation.
 
-![Risk Summary screenshot](./docs/screenshot.png)
-
----
 
 ## Table of contents
 - [Project overview](#project-overview)  
@@ -13,18 +10,12 @@ A clean, interactive dashboard to track and analyze project risks and opportunit
 - [Dashboard pages & interactions](#dashboard-pages--interactions)  
 - [Data model & sources](#data-model--sources)  
 - [How to run / reproduce locally](#how-to-run--reproduce-locally)  
-- [Folder structure](#folder-structure)  
-- [Sample queries & scripts](#sample-queries--scripts)  
-- [Contributing](#contributing)  
-- [License](#license)  
-- [Contact](#contact)
-
----
+- [Folder structure](#folder-structure)
 
 ## Project overview
 This repository contains everything needed to reproduce the "Risk Summary" dashboard: the Power BI report file (.pbix), sample datasets, ETL/preprocessing scripts, and documentation. The dashboard surfaces counts of open risks, aggregated severity & likelihood, owner-level rankings, stacked risk-level charts by likelihood, weighted risk scores, and a detailed table for operational use.
 
----
+## Dashboard Preview
 
 ## Goals and audience
 - Provide executives and project managers a quick summary of active risks.
@@ -33,7 +24,6 @@ This repository contains everything needed to reproduce the "Risk Summary" dashb
 
 Audience: PMO, Risk Managers, Project Leads.
 
----
 
 ## Key metrics & KPIs
 - *Total Open Risks* — count of IsOpen == True (shown: 500)
@@ -84,9 +74,40 @@ Example data sources:
 2. Open ./powerbi/Risk-Summary.pbix.
 3. If using the included sample CSV, Power BI will load it automatically. If you use your own data, update the data source in Power BI (Home > Transform data > Data source settings).
 
-### Option B — Rebuild using CSV + python preprocessing
-1. Create a Python virtual environment and install dependencies:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # or venv\Scripts\activate on Windows
-   pip install pandas sqlalchemy
+
+## Folder Structure
+risk-summary-dashboard/
+├─ .github/
+│  └─ ISSUE_TEMPLATE.md
+├─ docs/
+│  ├─ screenshot.png
+│  └─ design-notes.md
+├─ data/
+│  ├─ raw/
+│  │  └─ risks_sample.csv
+│  └─ processed/
+│     └─ risks_clean.csv
+├─ powerbi/
+│  └─ Risk-Summary.pbix
+├─ scripts/
+│  └─ preprocess.py
+├─ sql/
+│  └─ create_risks_table.sql
+├─ README.md
+└─ LICENSE
+
+## Suggested Power BI measures (DAX)
+
+IsOpenCount = CALCULATE(COUNT('risks'[RiskID]), 'risks'[IsOpen] = 1)
+
+SumSeverity = SUM('risks'[Severity])
+
+SumLikelihood = SUM('risks'[Likelihood])
+
+RiskScore = SUMX('risks', 'risks'[Severity] * 'risks'[Likelihood])
+
+## Connect With Me
+
+If you liked this project or want to collaborate, connect with me on:
+
+ [LinkedIn]( https://www.linkedin.com/in/ankita-c-4a1581212) | [GitHub](https://github.com/AnkitaChoubey/AnkitaChoubey)
