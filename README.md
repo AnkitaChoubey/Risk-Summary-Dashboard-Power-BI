@@ -16,7 +16,8 @@ A clean, interactive dashboard to track and analyze project risks and opportunit
 This repository contains everything needed to reproduce the "Risk Summary" dashboard: the Power BI report file (.pbix), sample datasets, ETL/preprocessing scripts, and documentation. The dashboard surfaces counts of open risks, aggregated severity & likelihood, owner-level rankings, stacked risk-level charts by likelihood, weighted risk scores, and a detailed table for operational use.
 
 ## Dashboard Preview
-<img width="1229" height="684" alt="Screenshot 2025-09-28 151343" src="https://github.com/user-attachments/assets/c3d96225-1a78-4f65-abb8-e48c5bac8f43" />
+ <img width="1198" height="697" alt="Dashboard Image" src="https://github.com/user-attachments/assets/ad868086-5be4-44de-acfc-c3f0e85d1843" />
+
 
 
 ## Goals and audience
