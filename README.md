@@ -79,13 +79,13 @@ Example data sources:
 
 ## Suggested Power BI measures (DAX)
 
-IsOpenCount = CALCULATE(COUNT('risks'[RiskID]), 'risks'[IsOpen] = 1)
+Is Open Count = CALCULATE (COUNT('risks'[RiskID]), 'risks'[IsOpen] = 1)
 
-SumSeverity = SUM('risks'[Severity])
+Sum Severity = SUM ('risks'[Severity])
 
-SumLikelihood = SUM('risks'[Likelihood])
+Sum Likelihood = SUM ('risks'[Likelihood])
 
-RiskScore = SUMX('risks', 'risks'[Severity] * 'risks'[Likelihood])
+Risk Score = SUMX ('risks', 'risks'[Severity] * 'risks'[Likelihood])
 
 ## Connect With Me
 
